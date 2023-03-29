@@ -7,11 +7,25 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
  </head>
- <body>
+ <body onload="showmodal()">
     <div id="modalbox">
         <img src="image/cookies.png" class="cookies">
         <p>We cookies to optimize user experience and content. </p>
-        <button type="button">Accept</button>
+        <button type="button" onclick="closeModal">Accept</button>
+        <img src="image/close.png" class="close-icon" onclick="closeModal()">
     </div>
+    <script>
+
+      let modalBox = document.getElementById("modalbox")
+
+      function showmodal(){
+        setTimeout(()=>{
+            modalBox.style.display = "block";
+        }, 3000) 
+      }
+      function closeModal(){
+         modalBox.style.display = "none";
+      }
+    </script>
  </body>
  </html>
